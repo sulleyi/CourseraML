@@ -38,9 +38,23 @@ grad = zeros(size(theta));
 
 
 
+h = sigmoid(X * theta);
+s = sum(-y .* log(h) - (1-y) .* log (1-h));
+J = s/m;
+
+
+grad = (1/m) * sum((h-y) .* X);
+
+costSum = sum(theta(2:end).^(2));
+regFactor = lambda / m;
+
+J = J + .5*regFactor*costSum;
+ 
 
 
 
+
+grad(2:end) = grad(2:end)  + regFactor .* theta(2:end)';
 
 
 
