@@ -31,7 +31,10 @@ X = [ones(m, 1) X];
 %       
 
 
-p = max(oneVsAll(
+h = sigmoid(X * all_theta');
+[val, i] = max(h, [], 2);
+
+p = i;
 
 
 
