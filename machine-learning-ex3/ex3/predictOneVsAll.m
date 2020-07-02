@@ -31,7 +31,7 @@ X = [ones(m, 1) X];
 %       
 
 
-
+p = max(oneVsAll(
 
 
 
