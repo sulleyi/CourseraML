@@ -23,7 +23,13 @@ p = zeros(size(X, 1), 1);
 
 
 
+X =  [ones(size(X, 1), 1) X];
 
+h1 = sigmoid(X * Theta1');
+h1 = [ones(size(h1, 1), 1) h1];
+h2 = sigmoid(h1 * Theta2');
+[val i] = max(h2, [], 2);
+p = i;
 
 
 
